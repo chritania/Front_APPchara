@@ -1,25 +1,67 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home:Scaffold(
-      appBar:AppBar(
-        title:Center(
-          child:Text('APPchara'),
-        ),
-        backgroundColor:Colors.amber[700],
+void main() => runApp(MaterialApp(
+  home:Scaffold(
+    appBar:AppBar(
+      title: Text('User Profile'),
+      backgroundColor: Colors.amberAccent,
+      centerTitle: true,
+    ),
+    body: Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'NAME',
+            style: TextStyle(
+              fontSize: 18.0,
+              letterSpacing: 1.5,
+            ),
+          ),
+          Text(
+            'Chritania Dominic M. Perez',
+            style: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height:30.0),
+          Text(
+            'YEAR',
+            style: TextStyle(
+              fontSize: 18.0,
+              letterSpacing: 1.5,
+            ),
+          ),
+          Text(
+            'Third',
+            style: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height:30.0),
+          Text(
+            'EMAIL',
+            style: TextStyle(
+              fontSize: 18.0,
+              letterSpacing: 1.5,
+            ),
+          ),
+          Text(
+            'chritaniap@gmail.com',
+            style: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
-      body:Center(
-        child:Image.network('https://filipinofoodmovement.weebly.com/uploads/2/2/0/2/22021218/edited/atchara.jpg'),
-      ),
-      floatingActionButton:FloatingActionButton(
-        onPressed:(){},
-       backgroundColor:Colors.amber[700],
-        child:Icon(
-            Icons.add,
-            color:Colors.white60,
-        )
-      ),
-    )
-  ));
-}
+    ),
+  ),
+));
+
