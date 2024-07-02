@@ -73,7 +73,7 @@ class _SignupState extends State<Signup> {
                           return 'Please provide an email';
                         }
                         if(value.length < 2){
-                          return 'Email should be existed';
+                          return 'Email should be existing';
                         }
                         return null;
                       },
@@ -121,6 +121,60 @@ class _SignupState extends State<Signup> {
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.amber,
                       ),
+                    ),
+                    SizedBox(height: 30.0,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'or signup with',
+                          style: TextStyle(
+                              color: Colors.black
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+
+                      child: Text('Log in with Google'),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.red[900],
+                      ),
+                    ),
+                    SizedBox(height: 15.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+
+                      child: Text('Log in with Facebook'),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.blueAccent,
+                      ),
+                    ),
+                    SizedBox(height: 50.0,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Do you have an account?',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(width: 5.0,),
+                        InkWell(
+                          child: Text(
+                            'Login here',
+                            style: TextStyle(
+                              color: Colors.amber[600],
+                            ),
+                          ),
+                          onTap: ()=> Navigator.popAndPushNamed(context, '/login'),
+                        )
+                      ],
                     ),
                   ],
                 ),
