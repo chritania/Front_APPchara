@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
           child: Column(
             children: <Widget>[
               Text(
-                'Login your account',
+                'Welcome Back!',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
@@ -41,7 +41,8 @@ class _LoginState extends State<Login> {
                         label: Text('Email'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
-                        )
+                        ),
+                        prefixIcon: Icon(Icons.email),
                       ),
                       validator: (value){
                       if(value == null || value.isEmpty){
@@ -63,7 +64,8 @@ class _LoginState extends State<Login> {
                         label: Text('Password'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0)
-                        )
+                        ),
+                        prefixIcon: Icon(Icons.lock),
                       ),
                       validator: (value){
                         if(value == null || value.isEmpty){
@@ -98,7 +100,7 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'or signup with',
+                      'or login with',
                       style: TextStyle(
                         color: Colors.black
                       ),
@@ -106,20 +108,20 @@ class _LoginState extends State<Login> {
                   ],
                     ),
                     SizedBox(height: 30.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-
-                      child: Text('Log in with Google'),
+                      icon: Icon(Icons.login),
+                      label: Text('Sign in with Google'),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.red[900],
                       ),
                     ),
                     SizedBox(height: 15.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-
-                      child: Text('Log in with Facebook'),
+                      icon: Icon(Icons.facebook),
+                      label: Text('Sign in with Facebook'),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.blueAccent,
@@ -133,7 +135,7 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Dont have an account?',
+                      'Don\'t have an account?',
                       style: TextStyle(
                         color: Colors.grey[600],
                       ),
@@ -143,7 +145,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         'Signup here',
                         style: TextStyle(
-                          color: Colors.amber[600],
+                          color: Colors.amber[700],
                         ),
                       ),
                       onTap: ()=> Navigator.popAndPushNamed(context, '/signup'),

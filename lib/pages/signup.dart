@@ -25,7 +25,7 @@ class _SignupState extends State<Signup> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Lets Get Started!',
+                'Let\'s Get Started!',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2.0,
@@ -44,7 +44,8 @@ class _SignupState extends State<Signup> {
                         label: Text('Name'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0)
-                        )
+                        ),
+                        prefixIcon: Icon(Icons.person),
                       ),
                       validator: (value){
                         if(value == null || value.isEmpty){
@@ -67,6 +68,7 @@ class _SignupState extends State<Signup> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)
                             ),
+                          prefixIcon: Icon(Icons.email),
                         ),
                       validator: (value){
                         if(value == null || value.isEmpty){
@@ -89,6 +91,7 @@ class _SignupState extends State<Signup> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)
                         ),
+                        prefixIcon: Icon(Icons.lock),
                       ),
                       validator: (value){
                       if(value == null || value.isEmpty){
@@ -116,7 +119,7 @@ class _SignupState extends State<Signup> {
                           print(password);
                         }
                       },
-                      child: Text('Sign up'),
+                      child: Text('Create Account'),
                       style:ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.amber,
@@ -135,20 +138,20 @@ class _SignupState extends State<Signup> {
                       ],
                     ),
                     SizedBox(height: 30.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-
-                      child: Text('Log in with Google'),
+                      icon:Icon(Icons.login),
+                      label:Text('Log in with Google'),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.red[900],
                       ),
                     ),
                     SizedBox(height: 15.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-
-                      child: Text('Log in with Facebook'),
+                      icon: Icon(Icons.facebook),
+                      label: Text('Log in with Facebook'),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.blueAccent,
@@ -159,7 +162,7 @@ class _SignupState extends State<Signup> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'Do you have an account?',
+                          'Already have account?',
                           style: TextStyle(
                             color: Colors.grey[600],
                           ),
