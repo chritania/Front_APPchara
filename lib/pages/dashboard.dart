@@ -31,11 +31,11 @@ class _DashboardState extends State<Dashboard> {
           children: [
             Center(
               child:Image.asset(
-                'assets/logo.png',
+                'assets/logoo.png',
                 width: 360,
                 ),
               ),
-              SizedBox(height: 120.0,),
+              SizedBox(height: 100.0,),
               ElevatedButton(
               onPressed: (){
                     Navigator.pushNamed(context, '/menu');
