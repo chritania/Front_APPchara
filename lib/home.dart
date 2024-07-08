@@ -112,6 +112,24 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                ElevatedButton(
+                  onPressed: (){
+                    setState(() {
+                      year += 1;
+                    });
+                  },
+                  child: Text('Add year',
+                    style: TextStyle(color:Colors.black),
+                  ),
+                  style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.amber)
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
