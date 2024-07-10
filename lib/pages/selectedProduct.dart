@@ -24,6 +24,7 @@ class _SelectedProductState extends State<SelectedProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber[100],
       appBar: AppBar(
         backgroundColor: Colors.amber,
         title: Text(
@@ -33,17 +34,21 @@ class _SelectedProductState extends State<SelectedProduct> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            children: [
-              Text(widget.product.productName),
-              Text(widget.product.description),
-            ],
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15.0,20.0, 10.0, 0),
+            child: Column(
+              children: [
+                Image.network(product.url),
+                Text(widget.product.productName),
+                Text(widget.product.description),
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-          '₱ ${totalAmount.toString()}',
+          '₱ ${totalAmount.toStringAsFixed(2)}',
             style: TextStyle(
               fontSize: 20.0,
             ),
