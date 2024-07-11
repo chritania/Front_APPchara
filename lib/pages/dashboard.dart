@@ -58,6 +58,8 @@ class _DashboardState extends State<Dashboard> {
               options: CarouselOptions(
                 height: 400.0,
                 showIndicator: true,
+                autoPlayInterval: Duration(seconds: 2),
+                autoPlayAnimationDuration: Duration(milliseconds: 700),
                 slideIndicator: CircularSlideIndicator(),
               ),
               items: [

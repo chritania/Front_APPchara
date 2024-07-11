@@ -15,6 +15,8 @@ class _SelectedProductState extends State<SelectedProduct> {
   int numberOfOrders = 1;
   _SelectedProductState({required this.product});
 
+  Widget loadingDisplay = CircularProgressIndicator();
+
   @override
   void initState() {
     super.initState();
@@ -35,11 +37,35 @@ class _SelectedProductState extends State<SelectedProduct> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(15.0,20.0, 10.0, 0),
+            padding: const EdgeInsets.fromLTRB(30.0,35.0, 30.0, 35.0),
             child: Column(
               children: [
-                Image.network(product.url),
-                Text(widget.product.productName),
+                Image.network(product.url,
+                  loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes!
+                            : null,
+                      ),
+                    );
+                  },),
+                SizedBox(height: 30.0,),
+                Column(
+                  children: [
+                    Text(widget.product.productName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                    ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.0,),
                 Text(widget.product.description),
               ],
             ),
